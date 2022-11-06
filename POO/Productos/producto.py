@@ -41,6 +41,19 @@ class Producto:
     def calcTotal(self, unidades):
         return "En total es: ", self.__precio*unidades
 
+class Pedido:
+    def __init__(self, productos, cantidades):
+        self.__producto=productos
+        self.__cantidades=cantidades
+
+    def totalPedido(self):
+        pass
+
+    def mostrarPedido(self):
+        pass
+    
+        
+
 espaguetis=Producto (1, "Espaguetis", 1400)
 arroz=Producto (2, "Arroz", 2300)
 frijoles=Producto (3, "Frijoles", 3400)
@@ -52,6 +65,8 @@ print(espaguetis.calcTotal(20))
 print(arroz.calcTotal(98))
 print(frijoles.calcTotal(3))
 
+
+        
 
 
     
