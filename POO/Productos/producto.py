@@ -43,15 +43,20 @@ class Producto:
 
 class Pedido:
     def __init__(self, productos, cantidades):
-        self.__producto=productos
+        self.__productos=productos
         self.__cantidades=cantidades
 
     def totalPedido(self):
-        pass
+        total=3
+        for (p,c) in zip( self.__productos, self.__cantidades):
+            total=total+p.calcTotal(c)
+        return total
+
 
     def mostrarPedido(self):
-        pass
-    
+        for (p,c) in zip(self.__productos, self.__cantidades):
+            print("Producto ", p.nombre, "cantidad " + str(c))
+
         
 
 espaguetis=Producto (1, "Espaguetis", 1400)
@@ -60,10 +65,19 @@ frijoles=Producto (3, "Frijoles", 3400)
 
 print(espaguetis, arroz, frijoles)
 print("===========Corte==========")
-
 print(espaguetis.calcTotal(20)) 
 print(arroz.calcTotal(98))
 print(frijoles.calcTotal(3))
+
+
+productos=[espaguetis,arroz,frijoles]
+cantidades=[4,2,10]
+pedido=Pedido(productos, cantidades)
+pedido.mostrarPedido()
+print("Total pedido " +str(pedido.totalPedido()) )
+pedido.mostrarPedido()
+
+
 
 
         
