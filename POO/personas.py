@@ -36,7 +36,10 @@ class Personas:
             return "Es mayor de edad"
         else:
             return "Es menor de edad"
+    def enviarEdad(self):
+        self.__edad=23
 
+        return self.__edad
 
 miPersona = Personas("Ana", 23, 2033304)
 print(miPersona)
