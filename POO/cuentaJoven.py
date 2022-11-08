@@ -1,6 +1,6 @@
-import personas
+from personas import Personas
 
-class CuentaJoven:
+class CuentaJoven(Personas):
     def __init__(self, titular,cantidad, bonificacion):
         self.__titular=titular
         self.__cantidad=cantidad
@@ -36,7 +36,7 @@ def bonificacion(self, valor):
 ############################
 
 def esTitularValido(self):
-    edad = personas.enviarEdad()
+    edad = Personas.enviarEdad()
     if edad >=18 and edad <= 25:
         return True
     else:
